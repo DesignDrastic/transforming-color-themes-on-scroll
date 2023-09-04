@@ -1,0 +1,137 @@
+:root {
+  --font: 'Recursive', sans-serif;
+  --radius: 4px;
+  --transition: all 1s;
+}
+.clear-fix:before,
+.clear-fix:after {
+  flex-basis: 0;
+  order: 1;
+}
+.light {
+  --clr-primary: #000;
+  --clr-secondary: #eae5e9;
+  --clr-dots: #00000066;
+  --size: 4rem;
+  --weight: 900;
+  --letter-spacing: 0;
+}
+.dark {
+  --clr-primary: #ffc2f0;
+  --clr-secondary: #000;
+  --clr-dots: #ffc2f099;
+  --size: 4rem;
+  --weight: 800;
+  --letter-spacing: 5px;
+}
+.solarized-light {
+  --clr-secondary: #fdf6e3;
+  --clr-primary: #586e75;
+  --clr-dots: #586e7599;
+  --size: 4rem;
+  --weight: 800;
+  --letter-spacing: 0;
+}
+.solarized-dark {
+  --clr-secondary: #002b36;
+  --clr-primary: #839496;
+  --clr-dots: #83949699;
+  --size: 4rem;
+  --weight: 900;
+  --letter-spacing: 3px;
+}
+body {
+  font-family: var(--font);
+  background-color: var(--clr-secondary);
+  transition: var(--transition);
+}
+.container {
+  margin: 0 auto;
+  width: max(800px, 70%);
+}
+.section {
+  padding: 4rem 0;
+  transition: var(--transition);
+}
+.section-image {
+  position: relative;
+  display: inline-block;
+}
+.section-image::after {
+  position: absolute;
+  content: "";
+  background: radial-gradient(var(--clr-dots) 0%, transparent 20%);
+  background-size: 15px 15px;
+  padding: 10px;
+  bottom: 0;
+  right: -50px;
+  width: 70px;
+  height: 225px;
+  z-index: -1;
+  transition: var(--transition);
+}
+.section-image .img {
+  border-radius: var(--radius);
+  margin: 2rem 0;
+}
+.form-btn {
+  display: inline-block;
+  font-family: var(--font);
+  font-weight: 700;
+  border: none;
+  background: var(--clr-primary);
+  color: var(--clr-secondary);
+  padding: 1rem 3rem;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+.title {
+  font-family: var(--font);
+  font-weight: var(--weight);
+  letter-spacing: var(--letter-spacing);
+  font-size: var(--size);
+  color: var(--clr-primary);
+  transition: var(--transition);
+}
+.content {
+  color: var(--clr-primary);
+  transition: var(--transition);
+}
+.shapes svg {
+  position: fixed;
+  top: 100px;
+  transition: var(--transition);
+  fill: var(--clr-primary);
+  width: 24px;
+  height: 24px;
+}
+.shapes svg:first-child {
+  right: 200px;
+}
+.shapes svg:nth-child(2) {
+  right: 250px;
+}
+.shapes svg:last-child {
+  right: 300px;
+}
+
+@media (max-width: 768px) {
+  .light {
+    --size: 2rem;
+    --weight: 900;
+    --letter-spacing: 0;
+  }
+  .shapes svg {
+    top: 0;
+  }
+  .shapes svg:first-child {
+    right: 0;
+  }
+  .shapes svg:nth-child(2) {
+    right: 40px;
+  }
+  .shapes svg:last-child {
+    right: 80px;
+  }
+}

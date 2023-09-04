@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Drastic</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+</head>
+<body class="light" id="body">
+  <div class="shapes">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0L24 24H0L12 0Z"/>
+    </svg>
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="12"/>
+    </svg>
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0L14.6942 8.98278H23.4127L16.3593 14.5344L19.0534 23.5172L12 17.9656L4.94658 23.5172L7.64074 14.5344L0.587322 8.98278H9.30583L12 0Z"/>
+    </svg>
+  </div>
+  <div class="container">
+    <!-- Section -->
+    <section class="section" dd-theme="light">
+      <!-- Title / Heading -->
+      <h1 class="title">Lorem ipsum title</h1>
+      <div class="clearfix"></div>
+      <!-- Grid -->
+      <div class="grid">
+        <div class="grid3-5">
+          <!-- Image -->
+          <div class="section-image">
+            <img src="images/pexels-zoe-pappas-1006965.jpg" alt="image" class="img">
+          </div>
+          <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta iusto, ea laudantium quas repellendus quo tenetur sed sapiente perferendis, deserunt molestias qui, eos beatae voluptatibus obcaecati nemo autem vitae delectus.</p>
+          <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta iusto, ea laudantium quas repellendus quo tenetur sed sapiente perferendis, deserunt molestias qui, eos beatae voluptatibus obcaecati nemo autem vitae delectus.</p>
+          <div class="clearfix"></div><br />
+          <button class="form-btn">Explore!</button>
+        </div>
+      </div>
+    </section>
+    <!-- Section 2 -->
+    <section class="section" dd-theme="dark">
+      <h1 class="title">Lorem ipsum Dolor sit!</h1>
+      <div class="clearfix"></div>
+      <div class="grid">
+        <div class="grid3-5">
+          <div class="section-image">
+            <img src="images/pexels-zoe-pappas-1006965.jpg" alt="image" class="img">
+          </div>
+          <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta iusto, ea laudantium quas repellendus quo tenetur sed sapiente perferendis, deserunt molestias qui, eos beatae voluptatibus obcaecati nemo autem vitae delectus.</p>
+          <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta iusto, ea laudantium quas repellendus quo tenetur sed sapiente perferendis, deserunt molestias qui, eos beatae voluptatibus obcaecati nemo autem vitae delectus.</p>
+          <div class="clearfix"></div><br />
+          <button class="form-btn">Explore!</button>
+        </div>
+      </div>
+    </section>
+    <!-- Section 3 -->
+    <section class="section" dd-theme="solarized-light">
+      <h1 class="title">Lorem ipsum Dolor sit!</h1>
+      <div class="clearfix"></div>
+      <div class="grid">
+        <div class="grid3-5">
+          <div class="section-image">
+            <img src="images/pexels-zoe-pappas-1006965.jpg" alt="image" class="img">
+          </div>
+          <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta iusto, ea laudantium quas repellendus quo tenetur sed sapiente perferendis, deserunt molestias qui, eos beatae voluptatibus obcaecati nemo autem vitae delectus.</p>
+          <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta iusto, ea laudantium quas repellendus quo tenetur sed sapiente perferendis, deserunt molestias qui, eos beatae voluptatibus obcaecati nemo autem vitae delectus.</p>
+          <div class="clearfix"></div><br />
+          <button class="form-btn">Explore!</button>
+        </div>
+      </div>
+    </section>
+    <!-- Section 4 -->
+    <section class="section" dd-theme="solarized-dark">
+      <h1 class="title">Lorem ipsum Dolor sit!</h1>
+      <div class="clearfix"></div>
+      <div class="grid">
+        <div class="grid3-5">
+          <div class="section-image">
+            <img src="images/pexels-zoe-pappas-1006965.jpg" alt="image" class="img">
+          </div>
+          <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta iusto, ea laudantium quas repellendus quo tenetur sed sapiente perferendis, deserunt molestias qui, eos beatae voluptatibus obcaecati nemo autem vitae delectus.</p>
+          <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta iusto, ea laudantium quas repellendus quo tenetur sed sapiente perferendis, deserunt molestias qui, eos beatae voluptatibus obcaecati nemo autem vitae delectus.</p>
+          <div class="clearfix"></div><br />
+          <button class="form-btn">Explore!</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+window.onscroll = onScroll;
+let sections = document.querySelectorAll("[dd-theme]");
+let total_section = sections.length;
+let window_offset;
+let window_half_height = Number(window.innerHeight) / 2;
+let pointer = 0;
+// Create the themes array with the values of class names.
+let themes = [];
+sections.forEach(c => {
+  themes.push(c.attributes['dd-theme'].value);
+})
+function onScroll(event) {
+  let scroll_y = window.scrollY;
+  // e.offsetTop / window_height
+  window_offset = window.pageYOffset;
+  let top_pos = Number(window.pageYOffset) + window_half_height;
+  let section_top = sections[pointer].offsetTop;
+  if( top_pos > section_top ) {
+    body.classList = themes[pointer];
+    if( pointer != (total_section - 1)  ) {
+      pointer++;
+    }
+  }  else if ( top_pos < section_top  ) {
+    pointer--;
+    body.classList = themes[pointer];
+  }
+}
+  </script>
+</body>
+</html>
